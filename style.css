@@ -1,0 +1,185 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #e6f2ff;
+  color: #000000;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #0a192f;
+  color: #ffffff;
+}
+
+/* BUTTON */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 8px 14px;
+  border: none;
+  background: #06402b;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.toggle-btn:hover {
+  opacity: 0.9;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 25%;
+  background: #06402b;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* PROFILE IMAGE */
+.sidebar img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* LINKS */
+.sidebar a {
+  color: #a8f0d1;
+  text-decoration: none;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.sidebar a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* DARK MODE LINK HOVER */
+body.dark .sidebar a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* MAIN */
+.main {
+  width: 75%;
+  padding: 40px;
+}
+
+/* CARDS */
+.card {
+  background: #ffffff;
+  color: #000000;
+  padding: 28px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-left: 4px solid #06402b; /* only in light mode */
+}
+
+/* SUBTLE HOVER */
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* DARK MODE CARDS (FIX APPLIED HERE) */
+body.dark .card {
+  background: #112240;
+  color: #ffffff;
+  border: 1px solid #1e3a5f;
+  border-left: none; /* ✅ REMOVED GREEN BORDER */
+}
+
+/* TYPOGRAPHY */
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+p {
+  font-size: 16px;
+  color: inherit;
+}
+
+/* REMOVE SKILL BARS */
+.bar,
+.fill {
+  display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .main {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .sidebar img {
+    width: 120px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .toggle-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
